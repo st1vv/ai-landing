@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', { "title":"Scrooge Frog FAQ" })
+
+<body>
+    <div class="wrapper">
+        <header class="header" data-da=".page, 992, 0">
+            <div class="header__top top-header" data-lp>
+                <div class="top-header__container">
+                    <a class="top-header__descr" href="#offer">USE YOUR AD BUDGET MORE WISELY</a>
+                </div>
+            </div>
+            <div class="header__bottom bottom-header" data-lp>
+                <div class="bottom-header__container">
+                    <div class="bottom-header__wrapper" data-spollers>
+                        <a class="bottom-header__logo" href="/">
+                            <img src="@img/logo.svg" width="429" height="43" alt="ScroogeFrog Agency logotype" />
+                        </a>
+                        <button class="bottom-header__icon icon-menu" data-spoller="992,max" type="button"
+                            aria-label="Open menu">
+                            <span></span>
+                        </button>
+                        <div class="bottom-header__menu menu">
+                            <nav class="menu__body">
+
+                                <ul class="menu__list">
+
+                                    <li class="menu__item"><a class="menu__link" href="/#ai_antifraud">About AI
+                                            Antifraud</a>
+                                    <li class="menu__item"><a class="menu__link" href="/#cpc_antifraud">Benefits</a>
+                                    <li class="menu__item"><a class="menu__link" href="proc.html">Dataset processor</a>
+                                    <li class="menu__item"><a class="menu__link" href="/#offer">Contact us</a>
+                                </ul>
+                                <a class="menu__login" href="#offer">Demo</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="page">
+            <section class="faq">
+                <div class="faq__container">
+
+                    <div class="faq__wrapper">
+
+                        <div class="faq__left">
+                            <div class="faq__menu faq-menu" id="faq-menu"></div>
+                        </div>
+
+
+                        <div class="faq__right faq-right">
+                            <div class="faq-right__content" id="faq-content">
+                                <h5 class="faq-right__title">Frequently Asked Questions</h5>
+                                <p class="faq-right__text">Here you will find answers to the most common questions.
+                                    Browse through the categories to learn more and get the information you need.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="spinner">
+                        <div class="spinner__container">
+                            <div class="spinner__spin"></div>
+                        </div>
+                    </div>
+
+                    <div class="placeholder">
+                        <div class="placeholder__title">Something went wrong while loading data...</div>
+                        <div class="placeholder__text">Please try again later!</div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        @@include('html/footer.html') @@include('html/cookie.html')
+    </div>
+
+    @@include('html/cookie-popup.html') @@include('html/popup.html')
+    @@include('html/js.html')
+</body>
+
+</html>
