@@ -1,0 +1,257 @@
+.footer {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: url("@img/bgs/footer.png") 50% 0 / cover no-repeat;
+		mix-blend-mode: lighten;
+		z-index: -1;
+		height: 100%;
+	}
+	&__container {
+	}
+	&__wrapper {
+		@media (min-width: $tablet) {
+			gap: rem(20);
+		}
+		padding: rem(60) rem(0);
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		@media (max-width: $tablet) {
+			flex-wrap: wrap;
+			padding: rem(50) rem(0);
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: center;
+			padding: rem(40) rem(0);
+		}
+	}
+	&__left {
+		align-self: stretch;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@media (max-width: $tablet) {
+			flex: 1 1 100%;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: rem(40);
+		}
+	}
+	&__link {
+		font-size: rem(16);
+		font-weight: 500;
+	}
+	&__logo {
+		width: rem(364);
+		display: inline-flex;
+		@media (max-width: $pc) {
+			width: rem(300);
+		}
+		@media (max-width: em(389.98)) {
+			flex: auto;
+			width: 100%;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__contacts {
+	}
+	&__right {
+	}
+}
+.contact-footer {
+	@media (max-width: $mobile) {
+		margin-bottom: rem(40);
+	}
+	&__label {
+		@media (max-width: $tablet) {
+			font-size: rem(22);
+		}
+		@media (max-width: $mobile) {
+			text-align: center;
+			font-size: rem(20);
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__list {
+		&:not(:last-child) {
+			margin-bottom: rem(30);
+		}
+	}
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: rem(25);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__link {
+		font-size: rem(20);
+		display: inline-flex;
+		align-items: center;
+		transition: color 0.3s ease 0s;
+		@media (max-width: $tablet) {
+			font-size: rem(18);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(16);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: #6fbe3e;
+			}
+		}
+		&::before {
+			content: "";
+			flex: 0 0 rem(30);
+			width: rem(30);
+			height: rem(30);
+			margin-right: rem(13);
+			background: url("@img/icons/socials/phone.svg") 50% / 100% no-repeat;
+			@media (max-width: $mobile) {
+				flex: 0 0 rem(28);
+				width: rem(28);
+				height: rem(28);
+			}
+		}
+		&_phone {
+		}
+		&_mail {
+			&::before {
+				height: rem(28);
+				background-image: url("@img/icons/socials/mail.svg");
+				@media (max-width: $mobile) {
+					height: rem(26);
+				}
+			}
+		}
+	}
+	&__socials {
+		display: flex;
+		align-items: center;
+		@media (max-width: $mobile) {
+			justify-content: center;
+		}
+	}
+	&__social {
+		display: inline-flex;
+		&:not(:last-child) {
+			margin-right: rem(30);
+		}
+	}
+	&__social-link {
+	}
+}
+.right-footer {
+	@media (min-width: $mobile) {
+		flex: 0 0 rem(280);
+	}
+	@media (max-width: $mobile) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__label {
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+			@media (max-width: $mobile) {
+				margin-bottom: rem(20);
+			}
+		}
+	}
+	&__socials {
+		display: flex;
+		align-items: center;
+		@media (max-width: $mobile) {
+			justify-content: center;
+		}
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+	}
+	&__social {
+		display: inline-flex;
+		&:not(:last-child) {
+			margin-right: rem(30);
+		}
+	}
+	&__social-link {
+		font-size: 0;
+		svg {
+			path {
+				transition: fill 0.3s ease 0s;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					path {
+						fill: #6fbe3e;
+					}
+				}
+			}
+		}
+	}
+
+	&__docs {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: rem(10);
+
+
+		@media (max-width: $mobile) {
+			justify-content: center;
+			align-items: center;
+			margin-bottom: rem(20);
+		}
+	}
+
+	&__link {
+		font-size: rem(20);
+		display: inline-flex;
+		align-items: center;
+		transition: color 0.3s ease 0s;
+		@media (max-width: $tablet) {
+			font-size: rem(18);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(16);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: #6fbe3e;
+			}
+		}
+		
+		&:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+	}
+
+	&__copy {
+		font-size: rem(16);
+		font-weight: 500;
+		display: inline-block;
+		@media (max-width: $tablet) {
+			margin-bottom: rem(30);
+		}
+	}
+	
+}
