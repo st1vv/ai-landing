@@ -1,4 +1,4 @@
-import { _slideUp } from "./functions.js";
+import { _slideUp, _slideToggle} from "./functions.js";
 import { flsModules } from "./modules.js";
 
 window.addEventListener("scroll", () => {
@@ -46,6 +46,29 @@ if (document.querySelector(".form-offer")) {
       setTimeout(() => flsModules.popup.open("#error"), 100);
     }
   });
+}
+
+if (document.querySelector('.left-help-spollers__title')) {
+  const spollerLinks = document.querySelectorAll('.left-help-spollers__title')
+  spollerLinks.forEach(spollerLink => {
+    spollerLink.addEventListener('click', () => {
+      const link = spollerLink.getAttribute('href')
+      setTimeout(() => window.location.replace(link), 300)
+    })
+  })
+}
+// setSpollerAction(document.querySelector('.right-help-spollers__title'))
+if (document.querySelector('.left-help-spollers__body button')) {
+  const leftHelpBtns = document.querySelectorAll('.left-help-spollers__body button')
+  leftHelpBtns.forEach(leftHelpBtn => {
+    leftHelpBtn.addEventListener('click', () => {
+      const spollerTargetName = leftHelpBtn.dataset.targetSpoller
+      const spollerTarget = document?.querySelector(spollerTargetName)
+      spollerTarget.classList.toggle('_spoller-active')
+      _slideToggle(spollerTarget.nextElementSibling)
+    })
+
+  })
 }
 
 if (document.getElementById("fullYear")) {
