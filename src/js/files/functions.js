@@ -90,53 +90,91 @@ export const fullVHfix = () => {
 export const anchors = () => {
 	const anchors = document.querySelectorAll('a[href*="#"]');
 	if (anchors.length) {
-	  anchors.forEach(anchor => {
-		anchor.addEventListener('click', e => {
-		  const href = anchor.getAttribute('href'); // Получаем href ссылки
-		  const [targetPage, blockID] = href.split('#'); // Разделяем на страницу и хэш
-		  const currentPage = window.location.pathname; // Текущий путь страницы
-  
-		  if (!blockID) return; // Если нет хэша, ничего не делаем
-  
-		  if (!targetPage || targetPage === currentPage || targetPage === '') {
-			// Если якорь на текущей странице
-			e.preventDefault(); // Отменяем переход по ссылке
-			scrollToAnchor(`#${blockID}`); // Плавно скроллим к элементу
-		  } else {
-			// Если якорь на другой странице
-			// Сохраняем хэш в location.href, чтобы новая страница обработала его
-			return; // Разрешаем стандартный переход
-		  }
+		anchors.forEach(anchor => {
+			anchor.addEventListener('click', e => {
+				const href = anchor.getAttribute('href'); // Получаем href ссылки
+				const [targetPage, blockID] = href.split('#'); // Разделяем на страницу и хэш
+				const currentPage = window.location.pathname; // Текущий путь страницы
+
+				if (!blockID) return; // Если нет хэша, ничего не делаем
+
+				if (!targetPage || targetPage === currentPage || targetPage === '') {
+					// Если якорь на текущей странице
+					e.preventDefault(); // Отменяем переход по ссылке
+					scrollToAnchor(`#${blockID}`); // Плавно скроллим к элементу
+				} else {
+					// Если якорь на другой странице
+					// Сохраняем хэш в location.href, чтобы новая страница обработала его
+					return; // Разрешаем стандартный переход
+				}
+			});
 		});
-	  });
 	}
-  
+
 	// Если страница загружена с хэшем, скроллим к элементу
 	if (window.location.hash) {
 		scrollToAnchor(window.location.hash);
 	}
 };
-  
+
 // Функция плавного скролла
 const scrollToAnchor = hash => {
 	const targetElement = document.querySelector(hash);
-	const headerBottomHeight = document.querySelector('.bottom-header').clientHeight;
-	
+	const headerBottomHeight = document.querySelector('.bottom-header')?.clientHeight || 0;
+
 	if (targetElement) {
-	  let topPos =
-		targetElement.getBoundingClientRect().top + window.pageYOffset - headerBottomHeight - 20;
-  
-	  if (window.innerWidth < 992) {
-		topPos = targetElement.getBoundingClientRect().top + window.pageYOffset - 60;
-	  }
-  
-	  // Плавно скроллим к элементу
-	  window.scrollTo({
-		top: topPos,
-		behavior: 'smooth',
-	  });
+		// 👉 Якщо це спойлер – відкриваємо його перед скролом
+		if (targetElement.hasAttribute('data-spoller')) {
+			const spollersBlock = targetElement.closest('[data-spollers]');
+			const spollerSpeed = spollersBlock?.dataset.spollersSpeed
+				? parseInt(spollersBlock.dataset.spollersSpeed)
+				: 500;
+
+			// Ініціалізація блоку, якщо ще не зроблено
+			if (!spollersBlock.classList.contains('_spoller-init')) {
+				spollersBlock.classList.add('_spoller-init');
+			}
+
+			// Відкриваємо спойлер, якщо він ще закритий
+			if (!targetElement.classList.contains('_spoller-active')) {
+				targetElement.classList.add('_spoller-active');
+				targetElement.nextElementSibling.hidden = false;
+				_slideDown(targetElement.nextElementSibling, spollerSpeed);
+
+				// Скролимо після анімації відкриття
+				setTimeout(() => {
+					let topPos =
+						targetElement.getBoundingClientRect().top + window.pageYOffset - headerBottomHeight - 20;
+
+					if (window.innerWidth < 992) {
+						topPos = targetElement.getBoundingClientRect().top + window.pageYOffset - 60;
+					}
+
+					window.scrollTo({
+						top: topPos,
+						behavior: 'smooth',
+					});
+				}, spollerSpeed);
+
+				return; // Важливо — щоб не виконати скрол повторно нижче
+			}
+		}
+
+		// Якщо це не спойлер або він вже відкритий
+		let topPos =
+			targetElement.getBoundingClientRect().top + window.pageYOffset - headerBottomHeight - 20;
+
+		if (window.innerWidth < 992) {
+			topPos = targetElement.getBoundingClientRect().top + window.pageYOffset - 60;
+		}
+
+		window.scrollTo({
+			top: topPos,
+			behavior: 'smooth',
+		});
 	}
 };
+
 
 
 // Плавное раскрытие блока
@@ -316,6 +354,7 @@ export const spollers = () => {
 					if (oneSpoller && !spollerTitle.classList.contains('_spoller-active')) hideSpollersBody(spollersBlock)
 					spollerTitle.classList.toggle('_spoller-active')
 					_slideToggle(spollerTitle.nextElementSibling, spollerSpeed)
+					history.pushState(null, null, `#${spollerTitle.id}`)
 				}
 				e.preventDefault()
 			}
