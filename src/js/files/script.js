@@ -48,41 +48,15 @@ if (document.querySelector(".form-offer")) {
   });
 }
 
-// if (document.querySelector('.left-help-spollers__title')) {
-//   const spollerLinks = document.querySelectorAll('.left-help-spollers__title')
-//   spollerLinks.forEach(spollerLink => {
-//     spollerLink.addEventListener('click', () => {
-//       const link = spollerLink.getAttribute('href')
-//       setTimeout(() => window.location.replace(link), 300)
-//     })
-//   })
-// }
-
 if (document.querySelector('.left-help-spollers__title')) {
-  const spollerLinks = document.querySelectorAll('.left-help-spollers__title');
-  const currentParams = new URLSearchParams(window.location.search);
-
+  const spollerLinks = document.querySelectorAll('.left-help-spollers__title')
   spollerLinks.forEach(spollerLink => {
-    spollerLink.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const originalHref = spollerLink.getAttribute('href');
-
-      const baseUrl = new URL(originalHref, window.location.origin);
-      const linkParams = new URLSearchParams(baseUrl.search);
-
-      currentParams.forEach((value, key) => {
-        if (!linkParams.has(key)) {
-          linkParams.set(key, value);
-        }
-      });
-      baseUrl.search = linkParams.toString();
-      history.pushState(null, '', baseUrl.toString());
-    });
-  });
+    spollerLink.addEventListener('click', () => {
+      const link = spollerLink.getAttribute('href')
+      setTimeout(() => window.location.replace(link), 300)
+    })
+  })
 }
-
-
 
 // setSpollerAction(document.querySelector('.right-help-spollers__title'))
 if (document.querySelector('.left-help-spollers__body button')) {
