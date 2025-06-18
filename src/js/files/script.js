@@ -48,15 +48,15 @@ if (document.querySelector(".form-offer")) {
   });
 }
 
-// if (document.querySelector('.left-help-spollers__title')) {
-//   const spollerLinks = document.querySelectorAll('.left-help-spollers__title')
-//   spollerLinks.forEach(spollerLink => {
-//     spollerLink.addEventListener('click', () => {
-//       const link = spollerLink.getAttribute('href')
-//       setTimeout(() => window.location.replace(link), 300)
-//     })
-//   })
-// }
+if (document.querySelector('.left-help-spollers__title')) {
+  const spollerLinks = document.querySelectorAll('.left-help-spollers__title')
+  spollerLinks.forEach(spollerLink => {
+    spollerLink.addEventListener('click', () => {
+      const link = spollerLink.getAttribute('href')
+      setTimeout(() => window.location.replace(link), 300)
+    })
+  })
+}
 
 // setSpollerAction(document.querySelector('.right-help-spollers__title'))
 if (document.querySelector('.left-help-spollers__body button')) {

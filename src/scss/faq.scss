@@ -183,6 +183,13 @@
 			transition: color 0.3s ease 0s;
 			color: #fff;
 
+			@media (min-width: rem(768)) {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				max-width: 100%;
+			}
+
 			@media (any-hover: hover) {
 				&:hover {
 					color: #81bd52;
