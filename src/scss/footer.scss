@@ -53,13 +53,17 @@
 		@media (max-width: $pc) {
 			width: rem(300);
 		}
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
 		@media (max-width: em(389.98)) {
 			flex: auto;
 			width: 100%;
 		}
 		img {
 			width: 100%;
-			height: auto;
+  			height: auto;
+  			max-width: 192px;
 		}
 	}
 	&__contacts {

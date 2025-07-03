@@ -93,6 +93,8 @@
 		}
 		@media (max-width: $tablet) {
 			flex: 0 0 rem(300);
+			display: flex;
+			justify-content: center;
 			width: rem(300);
 		}
 		@media (max-width: $mobile) {
@@ -106,10 +108,19 @@
 		@media (max-width: em(389.98)) {
 			flex: 0 0 rem(220);
 			width: rem(220);
+			justify-content: flex-start;
 		}
 		img {
 			width: 100%;
-			height: auto;
+  			height: auto;
+  			max-width: 192px;
+
+			@media (max-width: $mobile) {
+				max-width: 160px;
+			}
+			@media (max-width: $mobileSmall) {
+				max-width: 140px;
+			}
 		}
 	}
 	&__icon {
