@@ -131,7 +131,7 @@ body::after {
 	}
 	&__text {
 		font-size: rem(24);
-		font-weight: 600;
+		font-weight: 500;
 		line-height: 1.35;
 		@media (max-width: $tablet) {
 			font-size: rem(22);

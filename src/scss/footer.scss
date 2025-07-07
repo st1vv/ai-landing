@@ -45,7 +45,7 @@
 	}
 	&__link {
 		font-size: rem(16);
-		font-weight: 500;
+		font-weight: 400;
 	}
 	&__logo {
 		width: rem(364);
@@ -251,7 +251,7 @@
 
 	&__copy {
 		font-size: rem(16);
-		font-weight: 500;
+		font-weight: 400;
 		display: inline-block;
 		@media (max-width: $tablet) {
 			margin-bottom: rem(30);

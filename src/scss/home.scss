@@ -47,7 +47,7 @@
 	}
 	&__text {
 		font-size: rem(36);
-		font-weight: 500;
+		font-weight: 400;
 		position: relative;
 		z-index: 2;
 		max-width: rem(820);
@@ -62,7 +62,7 @@
 			font-size: rem(24);
 		}
 		span {
-			font-weight: 900;
+			font-weight: 600;
 		}
 		&:not(:last-child) {
 			margin-bottom: rem(60);
@@ -138,7 +138,7 @@
 	}
 	&__text {
 		font-size: rem(20);
-		font-weight: 500;
+		font-weight: 400;
 		line-height: normal;
 		@media (max-width: $tablet) {
 			font-size: rem(18);
@@ -193,7 +193,7 @@
 	&__item {
 		padding-left: rem(35);
 		font-size: rem(20);
-		font-weight: 500;
+		font-weight: 400;
 		line-height: normal;
 		position: relative;
 		@media (max-width: $tablet) {
@@ -281,7 +281,7 @@
 		&_text {
 			color: #c9c9c9;
 			font-size: rem(36);
-			font-weight: 600;
+			font-weight: 500;
 			line-height: normal;
 			@media (max-width: $tablet) {
 				font-size: rem(33);
@@ -339,7 +339,7 @@
 	&__label {
 		flex: 0 1 50%;
 		font-size: rem(24);
-		font-weight: 600;
+		font-weight: 500;
 		line-height: normal;
 		padding: rem(30) rem(10);
 		background: #6fbe3e;
@@ -454,7 +454,7 @@
 			max-width: rem(350);
 			margin: 0 auto rem(20);
 		}
-		font-weight: 600;
+		font-weight: 500;
 		@media (max-width: $mobileSmall) {
 			font-size: rem(16);
 		}
@@ -464,7 +464,7 @@
 	}
 	&__label {
 		font-size: rem(20);
-		font-weight: 500;
+		font-weight: 400;
 		line-height: normal;
 		text-align: center;
 		@media (max-width: $tablet) {
@@ -485,7 +485,7 @@
 	}
 	&__descr {
 		font-size: rem(32);
-		font-weight: 900;
+		font-weight: 600;
 		line-height: normal;
 		padding: rem(25) rem(0);
 		border-radius: rem(18);
@@ -633,7 +633,7 @@
 
 	&__label {
 		font-size: rem(18);
-		font-weight: 500;
+		font-weight: 400;
 		line-height: normal;
 		text-align: center;
 
@@ -676,7 +676,7 @@
 			padding: 26px;
 			border-radius: 10px;
 			font-size: rem(24);
-			font-weight: 600;
+			font-weight: 500;
 
 			@media (max-width: $tablet) {
 				font-size: rem(20);
@@ -703,7 +703,7 @@
 			border-radius: 5px;
 			color: #6fbe3e;
 			font-size: rem(16);
-			font-weight: 600;
+			font-weight: 500;
 
 			@media (max-width: $mobile) {
 				font-size: rem(14);
@@ -804,7 +804,7 @@
 	}
 	&__label {
 		font-size: rem(20);
-		font-weight: 500;
+		font-weight: 400;
 		line-height: normal;
 		@media (max-width: $pc) {
 			font-size: rem(18);
@@ -887,7 +887,7 @@
 	&__descr {
 		font-size: rem(24);
 		text-align: center;
-		font-weight: 600;
+		font-weight: 500;
 		line-height: normal;
 		margin-bottom: rem(40);
 		@media (max-width: $tablet) {
@@ -917,7 +917,7 @@
 	&__label {
 		text-align: center;
 		font-size: rem(24);
-		font-weight: 600;
+		font-weight: 500;
 		line-height: 1.35;
 		@media (max-width: $tablet) {
 			font-size: rem(22);
@@ -1178,12 +1178,12 @@
 		}
 	}
 	&__num {
-		font-weight: 700;
+		font-weight: 500;
 		font-size: rem(48);
 		color: #6fbe3e;
 	}
 	&__descr {
-		font-weight: 500;
+		font-weight: 400;
 		font-size: rem(18);
 		line-height: 1.8;
 		text-align: justify;
