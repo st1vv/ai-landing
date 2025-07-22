@@ -1,4 +1,4 @@
-import { _slideUp, _slideToggle } from "./functions.js";
+import { _slideUp, _slideToggle, scrollToAnchor } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 window.addEventListener("scroll", () => {
@@ -76,11 +76,11 @@ if (document.querySelector('.left-help-spollers__body button')) {
         spollerTarget.classList.toggle('_spoller-active')
         _slideToggle(spollerTarget.nextElementSibling)
         history.pushState(null, null, spollerTargetName)
+        scrollToAnchor(window.location.hash)
       }
     })
   })
 }
-
 
 if (document.getElementById("fullYear")) {
   document.getElementById("fullYear").textContent = new Date().getFullYear();

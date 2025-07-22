@@ -118,7 +118,7 @@ export const anchors = () => {
 };
 
 // Функция плавного скролла
-const scrollToAnchor = hash => {
+export const scrollToAnchor = hash => {
 	const targetElement = document.querySelector(hash);
 	const headerBottomHeight = document.querySelector('.bottom-header')?.clientHeight || 0;
 
