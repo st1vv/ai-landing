@@ -1,6 +1,9 @@
 import { deleteCookie, getCookie, setCookie } from "./cookie.js";
 import { flsModules } from "./modules.js";
 
+// one week = 7 * 24 * 60 * 60
+const cookieMaxAge = 604800;
+
 if (document.querySelector(".cookie-banner")) {
 
   const cookieBanner = document.querySelector(".cookie-banner");
@@ -32,13 +35,13 @@ if (document.querySelector(".cookie-banner")) {
   };
 
   const setVisitedCookie = () => {
-    setCookie("visited", "true", { secure: true, "max-age": 3600 });
+    setCookie("visited", "true", { secure: true, "max-age": cookieMaxAge });
   };
 
   const acceptAllCookies = () => {
-    setCookie("performanceCookie", "true", { secure: true, "max-age": 3600 });
-    setCookie("targetingCookie", "true", { secure: true, "max-age": 3600 });
-    setCookie("functionalCookie", "true", { secure: true, "max-age": 3600 });
+    setCookie("performanceCookie", "true", { secure: true, "max-age": cookieMaxAge });
+    setCookie("targetingCookie", "true", { secure: true, "max-age": cookieMaxAge });
+    setCookie("functionalCookie", "true", { secure: true, "max-age": cookieMaxAge });
     cookiePopupPerformanceBtn.checked = true;
     cookiePopupTargetingBtn.checked = true;
     cookiePopupFunctionalBtn.checked = true;
@@ -139,19 +142,19 @@ if (document.querySelector(".cookie-banner")) {
     flsModules.popup.close("#cookie");
 
     if (cookiePopupPerformanceBtn.checked === true) {
-      setCookie("performanceCookie", "true", { secure: true, "max-age": 3600 });
+      setCookie("performanceCookie", "true", { secure: true, "max-age": cookieMaxAge });
     } else {
       deleteCookie("performanceCookie");
     }
 
     if (cookiePopupTargetingBtn.checked === true) {
-      setCookie("targetingCookie", "true", { secure: true, "max-age": 3600 });
+      setCookie("targetingCookie", "true", { secure: true, "max-age": cookieMaxAge });
     } else {
       deleteCookie("targetingCookie");
     }
 
     if (cookiePopupFunctionalBtn.checked === true) {
-      setCookie("functionalCookie", "true", { secure: true, "max-age": 3600 });
+      setCookie("functionalCookie", "true", { secure: true, "max-age": cookieMaxAge });
     } else {
       deleteCookie("functionalCookie");
     }
