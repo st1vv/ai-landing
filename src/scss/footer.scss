@@ -48,10 +48,10 @@
 		font-weight: 400;
 	}
 	&__logo {
-		width: rem(364);
+		width: rem(220);
 		display: inline-flex;
 		@media (max-width: $pc) {
-			width: rem(300);
+			width: rem(200);
 		}
 		@media (max-width: $tablet) {
 			justify-content: center;

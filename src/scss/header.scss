@@ -85,29 +85,29 @@
 		}
 	}
 	&__logo {
-		flex: 0 0 rem(429);
-		width: rem(429);
+		flex: 0 0 rem(220);
+		width: rem(220);
 		@media (max-width: $pc) {
-			flex: 0 0 rem(340);
-			width: rem(340);
+			flex: 0 0 rem(200);
+			width: rem(200);
 		}
 		@media (max-width: $tablet) {
-			flex: 0 0 rem(300);
+			flex: 0 0 rem(180);
 			display: flex;
 			justify-content: center;
-			width: rem(300);
+			width: rem(180);
 		}
 		@media (max-width: $mobile) {
-			flex: 0 0 rem(260);
-			width: rem(260);
+			flex: 0 0 rem(160);
+			width: rem(160);
 		}
 		@media (max-width: $mobileSmall) {
-			flex: 0 0 rem(238);
-			width: rem(238);
+			flex: 0 0 rem(150);
+			width: rem(140);
 		}
 		@media (max-width: em(389.98)) {
-			flex: 0 0 rem(220);
-			width: rem(220);
+			flex: 0 0 rem(140);
+			width: rem(140);
 			justify-content: flex-start;
 		}
 		img {
