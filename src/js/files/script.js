@@ -41,6 +41,13 @@ if (document.querySelector(".form-offer")) {
     });
     if (response.ok) {
       sendForm.reset();
+
+      try {
+        gtag("event", "form", { form_name: "contactForm" });
+      } catch (e) {
+        console.log("Google tag error", e)
+      }
+
       setTimeout(() => flsModules.popup.open("#thanks"), 100);
     } else {
       setTimeout(() => flsModules.popup.open("#error"), 100);
@@ -66,20 +73,22 @@ if (document.querySelector(".left-help-spollers__title")) {
 }
 
 // setSpollerAction(document.querySelector('.right-help-spollers__title'))
-if (document.querySelector('.left-help-spollers__body button')) {
-  const leftHelpBtns = document.querySelectorAll('.left-help-spollers__body button')
-  leftHelpBtns.forEach(leftHelpBtn => {
-    leftHelpBtn.addEventListener('click', () => {
-      const spollerTargetName = leftHelpBtn.dataset.targetSpoller
-      const spollerTarget = document?.querySelector(spollerTargetName)
+if (document.querySelector(".left-help-spollers__body button")) {
+  const leftHelpBtns = document.querySelectorAll(
+    ".left-help-spollers__body button"
+  );
+  leftHelpBtns.forEach((leftHelpBtn) => {
+    leftHelpBtn.addEventListener("click", () => {
+      const spollerTargetName = leftHelpBtn.dataset.targetSpoller;
+      const spollerTarget = document?.querySelector(spollerTargetName);
       if (spollerTarget) {
-        spollerTarget.classList.toggle('_spoller-active')
-        _slideToggle(spollerTarget.nextElementSibling)
-        history.pushState(null, null, spollerTargetName)
-        scrollToAnchor(window.location.hash)
+        spollerTarget.classList.toggle("_spoller-active");
+        _slideToggle(spollerTarget.nextElementSibling);
+        history.pushState(null, null, spollerTargetName);
+        scrollToAnchor(window.location.hash);
       }
-    })
-  })
+    });
+  });
 }
 
 if (document.getElementById("fullYear")) {
