@@ -308,20 +308,6 @@
 	&__container {
 	}
 	&__title {
-		padding: rem(27) rem(0);
-		border-radius: rem(33);
-		border: rem(1) solid #6fbe3e;
-		background: rgba(255, 255, 255, 0.06);
-		@media (max-width: $tablet) {
-			padding: rem(23) rem(0);
-		}
-		@media (max-width: $mobile) {
-			padding: rem(20) rem(0);
-			border-radius: rem(20);
-		}
-		@media (max-width: $mobileSmall) {
-			padding: rem(15) rem(10);
-		}
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
@@ -338,28 +324,22 @@
 	}
 	&__label {
 		flex: 0 1 50%;
-		font-size: rem(24);
-		font-weight: 500;
-		line-height: normal;
-		padding: rem(30) rem(10);
+		backdrop-filter: blur(100px);
 		background: #6fbe3e;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		border: rem(1) solid #6fbe3e;
+		border-radius: rem(15);
 		text-align: center;
-		border-radius: rem(34);
+		font-weight: 500;
+		font-size: rem(24);
+		line-height: math.div(36, 24);
+		padding: rem(16);
 		@media (max-width: $tablet) {
-			padding: rem(25) rem(20);
-			font-size: rem(22);
-		}
-		@media (max-width: $mobile) {
-			padding: rem(20) rem(20);
-			border-radius: rem(20);
 			font-size: rem(20);
 		}
-		@media (max-width: $mobileSmall) {
-			padding: rem(14) rem(30);
-			font-size: rem(18);
+		@media (max-width: $mobile) {
+			border-radius: rem(8);
+			font-size: rem(16);
+			padding: rem(10);
 		}
 		span {
 			@media (max-width: $mobile) {
@@ -371,29 +351,40 @@
 		}
 	}
 	&__body {
-		background: rgba(255, 255, 255, 0.06);
+		backdrop-filter: blur(200px);
+		background: rgba(255, 255, 255, 0.03);
 		border: rem(1) solid #6fbe3e;
-		padding: rem(30) 0;
-		border-radius: rem(33);
+		border-radius: rem(25);
+		padding: rem(40) rem(100) rem(24);
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 26%;
+			bottom: 26%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: 65%;
+			border-radius: 100%;
+			background: linear-gradient(180deg, #6fbe3e 0%, rgba(111, 190, 62, 0) 100%);
+			filter: blur(250px);
+			z-index: -1;
+		}
 		@media (max-width: $tablet) {
-			padding: rem(20) 0;
-			border-radius: rem(25);
+			padding: rem(32);
 		}
 		@media (max-width: $mobile) {
-			border-radius: rem(20);
-		}
-		@media (max-width: $mobileSmall) {
-			border-radius: rem(9);
-			padding: rem(15) 0;
+			padding: rem(20);
+			border-radius: rem(15);
 		}
 		img {
 			width: 100%;
-			object-fit: contain;
+			height: auto;
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(50);
+			margin-bottom: rem(36);
 			@media (max-width: $tablet) {
-				margin-bottom: rem(30);
+				margin-bottom: rem(20);
 			}
 		}
 	}
