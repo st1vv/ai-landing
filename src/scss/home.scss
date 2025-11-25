@@ -429,9 +429,10 @@
 			left: 0;
 			z-index: -1;
 			width: 100%;
-			height: rem(990);
+			// height: rem(990);
 			mix-blend-mode: lighten;
-			background: url("@img/bgs/techns.png") 50% / cover no-repeat;
+			background: url("@img/plans/bg.png") 50% / cover no-repeat;
+			aspect-ratio: 1440 / 1002;
 		}
 	}
 	&__container {
