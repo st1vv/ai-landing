@@ -182,6 +182,13 @@
 	@media (max-width: $mobile) {
 		padding: rem(35) rem(0);
 	}
+	&__models {
+		padding-bottom: rem(60);
+	@media (max-width: $tablet) {
+		padding-bottom: rem(30);
+	}
+	}
+
 	&__container {
 	}
 	&__title {

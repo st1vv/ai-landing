@@ -113,7 +113,7 @@ if (document.querySelector(".plan")) {
         item.style.display = isHidden ? "flex" : "none";
       });
 
-      toggleBtn.textContent = isHidden ? "Show less" : "Show more";
+      toggleBtn.textContent = isHidden ? "Less about plan" : "More about plan";
     });
   });
 }
