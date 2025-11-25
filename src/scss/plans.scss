@@ -81,10 +81,6 @@
 	@media (max-width: $tablet) {
 		min-height: rem(120);
 	}
-
-	@media (max-width: $mobile) {
-		min-height: rem(179);
-	}
 	@media (any-hover: hover) {
 		&:hover {
 			background: rgba(111, 190, 62, 0.17);
@@ -185,6 +181,7 @@
 	&__models {
 		padding-bottom: rem(60);
 	@media (max-width: $tablet) {
+		padding-top: rem(30);
 		padding-bottom: rem(30);
 	}
 	}
