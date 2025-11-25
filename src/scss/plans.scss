@@ -262,7 +262,7 @@
 	&__label {
 		font-weight: 500;
 		font-size: rem(25);
-		line-height: math.div(38, 25);
+		line-height: 1;
 		@media (max-width: $tablet) {
 			font-size: rem(23);
 		}
@@ -270,7 +270,7 @@
 			font-size: rem(20);
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(12);
+			margin-bottom: rem(8);
 			@media (max-width: $mobile) {
 				margin-bottom: rem(20);
 			}
@@ -280,28 +280,28 @@
 		font-weight: 500;
 		font-size: rem(14);
 		color: rgba(255, 255, 255, 0.7);
-		line-height: math.div(21, 14);
+		line-height: 1;
 		@media (min-width: $mobile) {
 			min-height: rem(42);
 			display: flex;
 			align-items: center;
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(16);
+			margin-bottom: rem(8);
 		}
 	}
 	&__cap {
 		font-weight: 500;
 		font-size: rem(14);
-		line-height: math.div(21, 14);
+		line-height: 1;
 		&:not(:last-child) {
-			margin-bottom: rem(16);
+			margin-bottom: rem(8);
 		}
 	}
 	&__list {
 		flex: auto;
 		&:not(:last-child) {
-			margin-bottom: rem(12);
+			margin-bottom: rem(8);
 		}
 	}
 	&__item {
@@ -394,6 +394,18 @@
 		padding: rem(0) rem(5);
 		display: inline-flex;
 	}
+	&__toggle {
+		font-size: rem(14);
+		transition: color 0.3s ease 0s;
+		padding: 4px 0;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: #6fbe3e;
+			}
+		}
+	}
+
 	&__btn {
 		padding: rem(10) rem(20);
 		font-size: rem(14);
@@ -410,4 +422,8 @@
 			}
 		}
 	}
+}
+
+.plan__hidden {
+  display: none;
 }

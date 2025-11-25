@@ -45,7 +45,7 @@ if (document.querySelector(".form-offer")) {
       try {
         gtag("event", "form", { form_name: "contactForm" });
       } catch (e) {
-        console.log("Google tag error", e)
+        console.log("Google tag error", e);
       }
 
       setTimeout(() => flsModules.popup.open("#thanks"), 100);
@@ -93,4 +93,27 @@ if (document.querySelector(".left-help-spollers__body button")) {
 
 if (document.getElementById("fullYear")) {
   document.getElementById("fullYear").textContent = new Date().getFullYear();
+}
+
+if (document.querySelector(".plan")) {
+  const plans = document.querySelectorAll(".plan");
+
+  plans.forEach((plan) => {
+    const toggleBtn = plan.querySelector(".plan__toggle");
+    const hiddenItems = plan.querySelectorAll(".plan__hidden");
+
+    if (!toggleBtn || hiddenItems.length === 0) return;
+
+    toggleBtn.addEventListener("click", () => {
+      const isHidden =
+        hiddenItems[0].style.display === "none" ||
+        hiddenItems[0].style.display === "";
+
+      hiddenItems.forEach((item) => {
+        item.style.display = isHidden ? "flex" : "none";
+      });
+
+      toggleBtn.textContent = isHidden ? "Show less" : "Show more";
+    });
+  });
 }
