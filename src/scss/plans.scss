@@ -402,10 +402,11 @@
 		font-size: rem(14);
 		transition: color 0.3s ease 0s;
 		padding: 4px 0;
+		color: #6fbe3e;
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: #6fbe3e;
+				color: #fff;
 			}
 		}
 	}
