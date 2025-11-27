@@ -539,6 +539,8 @@ body::after {
   padding: 0.625rem 1.875rem;
   background: #6fbe3e;
   border-radius: 2.5rem;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 }
 
 .menu__body {
@@ -557,13 +559,14 @@ body::after {
 
 .menu__link {
   font-size: 1rem;
-  -webkit-transition: color 0.3s ease 0s;
-  transition: color 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   font-weight: 500;
 }
 
 .menu__link_current {
   color: #6fbe3e;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
 }
 
 .footer {
@@ -2731,7 +2734,7 @@ body::after {
 
 .benefits {
   background: #101010;
-  padding: 7.625rem 0rem 5rem;
+  padding: 5rem 0rem 3.75rem;
 }
 
 .benefits__title {
@@ -2853,7 +2856,7 @@ body::after {
 
 .plans {
   background: #101010;
-  padding: 5rem 0rem 3.75rem;
+  padding: 7.625rem 0rem 5rem;
   position: relative;
 }
 
@@ -3943,7 +3946,7 @@ body::after {
   }
 
   .benefits {
-    padding: 6.25rem 0rem 3.125rem;
+    padding: 3.125rem 0rem;
   }
 
   .benefits__container {
@@ -3987,7 +3990,7 @@ body::after {
   }
 
   .plans {
-    padding: 3.125rem 0rem;
+    padding: 6.25rem 0rem 3.125rem;
   }
 
   .plans__models {
@@ -4515,7 +4518,7 @@ body::after {
   }
 
   .benefits {
-    padding: 3.75rem 0rem 2.1875rem;
+    padding: 2.1875rem 0rem;
   }
 
   .benefits__cols {
@@ -4537,7 +4540,7 @@ body::after {
   }
 
   .plans {
-    padding: 2.1875rem 0rem;
+    padding: 3.75rem 0rem 2.1875rem;
   }
 
   .plans__title {
@@ -4867,6 +4870,7 @@ body::after {
 
   .menu__link:hover {
     color: #6fbe3e;
+    text-shadow: 0 0 4px rgb(0, 0, 0);
   }
 
   .contact-footer__link:hover {
