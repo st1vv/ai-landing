@@ -1,11 +1,11 @@
 .benefits {
 	background: #101010;
-	padding: rem(122) rem(0) rem(80);
+	padding: rem(80) rem(0) rem(60);
 	@media (max-width: $tablet) {
-		padding: rem(100) rem(0) rem(50);
+		padding: rem(50) rem(0);
 	}
 	@media (max-width: $mobile) {
-		padding: rem(60) rem(0) rem(35);
+		padding: rem(35) rem(0);
 	}
 	&__container {
 		@media (max-width: $tablet) {
@@ -154,7 +154,7 @@
 
 .plans {
 	background: #101010;
-	padding: rem(80) rem(0) rem(60);
+	padding: rem(122) rem(0) rem(80);
 	position: relative;
 	&::after {
 		content: "";
@@ -173,17 +173,19 @@
 		}
 	}
 	@media (max-width: $tablet) {
-		padding: rem(50) rem(0);
+		padding: rem(100) rem(0) rem(50);
 	}
 	@media (max-width: $mobile) {
-		padding: rem(35) rem(0);
+		padding: rem(60) rem(0) rem(35);
 	}
+
+
 	&__models {
 		padding-bottom: rem(60);
-	@media (max-width: $tablet) {
-		padding-top: rem(30);
-		padding-bottom: rem(30);
-	}
+		@media (max-width: $tablet) {
+			padding-top: rem(30);
+			padding-bottom: rem(30);
+		}
 	}
 
 	&__container {
