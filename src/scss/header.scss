@@ -177,6 +177,7 @@
 		padding: rem(10) rem(30);
 		background: #6fbe3e;
 		border-radius: rem(40);
+		box-shadow: 0 0 4px rgba(0,0,0,0.6);
 		@media (max-width: $pc) {
 			padding: rem(10) rem(18);
 		}
@@ -237,7 +238,7 @@
 	}
 	&__link {
 		font-size: rem(16);
-		transition: color 0.3s ease 0s;
+		transition: all 0.3s ease 0s;
 		font-weight: 500;
 		@media (max-width: $pc) {
 			font-size: rem(15);
@@ -247,10 +248,12 @@
 		}
 		&_current {
 			color: #6fbe3e;
+			text-shadow: 0 0 4px rgba(0,0,0,1);
 		}
 		@media (any-hover: hover) {
 			&:hover {
 				color: #6fbe3e;
+				text-shadow: 0 0 4px rgba(0,0,0,1);
 			}
 		}
 	}
