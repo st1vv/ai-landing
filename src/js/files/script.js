@@ -91,8 +91,10 @@ if (document.querySelector(".left-help-spollers__body button")) {
   });
 }
 
-if (document.getElementById("fullYear")) {
-  document.getElementById("fullYear").textContent = new Date().getFullYear();
+if (document.querySelector(".fullYear")) {
+  document.querySelectorAll(".fullYear").forEach((el) => {
+    el.textContent = new Date().getFullYear();
+  });
 }
 
 if (document.querySelector(".plan")) {
