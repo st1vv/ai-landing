@@ -5011,14 +5011,6 @@ body::after {
             box-shadow: 0 0.625rem 1.875rem 0 rgba(111, 190, 62, 0.24);
   }
 
-  .plan__price-month:hover {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  .plan__price-year:hover {
-    background: #3f7f1c;
-  }
-
   .plan__toggle:hover {
     color: #fff;
   }
