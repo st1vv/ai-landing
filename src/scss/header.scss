@@ -178,6 +178,18 @@
 		background: #6fbe3e;
 		border-radius: rem(40);
 		box-shadow: 0 0 4px rgba(0,0,0,0.6);
+		transition: all 0.3s;
+		
+		&::after {
+			content: none;
+		}
+		
+		@media (any-hover: hover) {
+			&:hover {
+				color: #000;
+				background-color: #fff;
+			}
+		}
 		@media (max-width: $pc) {
 			padding: rem(10) rem(18);
 		}

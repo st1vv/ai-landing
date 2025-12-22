@@ -351,12 +351,8 @@
 		line-height: math.div(18, 12);
 		border-radius: rem(8);
 		padding: rem(3) rem(10);
-		transition: all 0.3s;
-		// @media (any-hover: hover) {
-		// 	&:hover {
-		// 		background: rgba(255, 255, 255, 0.08);
-		// 	}
-		// }
+		cursor: default;
+		
 		span {
 			font-size: rem(26);
 			color: #fff;
@@ -374,12 +370,8 @@
 		padding: rem(3);
 		min-width: rem(131);
 		text-align: center;
-		transition: background 0.3s;
-		// @media (any-hover: hover) {
-		// 	&:hover {
-		// 		background: #3f7f1c;
-		// 	}
-		// }
+		cursor: default;
+
 		span {
 			&:first-child {
 				font-size: rem(26);
