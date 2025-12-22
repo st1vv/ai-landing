@@ -541,6 +541,12 @@ body::after {
   border-radius: 2.5rem;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.menu__login::after {
+  content: none;
 }
 
 .menu__body {
@@ -921,6 +927,12 @@ body::after {
 .cookie-widget {
   border-radius: 50%;
   padding: 10px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.cookie-widget::after {
+  content: none;
 }
 
 .cookie-hidden {
@@ -3091,8 +3103,7 @@ body::after {
   line-height: 1.5;
   border-radius: 0.5rem;
   padding: 0.1875rem 0.625rem;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  cursor: default;
 }
 
 .plan__price-month span {
@@ -3112,8 +3123,7 @@ body::after {
   padding: 0.1875rem;
   min-width: 8.1875rem;
   text-align: center;
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
+  cursor: default;
 }
 
 .plan__price-year span:first-child {
@@ -4920,6 +4930,11 @@ body::after {
 @media (any-hover: hover) {
   .bottom-header__btn:hover {
     top: -0.5rem;
+  }
+
+  .menu__login:hover {
+    color: #000;
+    background-color: #fff;
   }
 
   .menu__link:hover {
