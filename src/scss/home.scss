@@ -350,6 +350,17 @@
 			}
 		}
 	}
+	&__image {
+		img {
+			width: 100%;
+			height: auto;
+		}
+		margin-bottom: rem(36);
+		
+		@media (max-width: $tablet) {
+			margin-bottom: rem(20);
+		}
+	}
 	&__body {
 		backdrop-filter: blur(200px);
 		background: rgba(255, 255, 255, 0.03);
