@@ -1,31 +1,138 @@
+.hero-plans {
+	@media (min-width: $tablet) {
+		padding-top: rem(44);
+	}
+
+	position: relative;
+
+	&__slider {
+		overflow: hidden;
+	}
+
+	&__wrapper {}
+
+	&__slide {
+		flex: 0 0 100%;
+	}
+
+	&__pagination {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		bottom: rem(100);
+		position: absolute;
+		width: 100%;
+
+		@media (max-width: $mobile) {
+			bottom: rem(50);
+		}
+
+		@media (max-width: $mobileSmall) {
+			bottom: rem(35);
+		}
+	}
+}
+
+.slide-hero-plans {
+	position: relative;
+	min-height: rem(775);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+
+	@media (max-width: $mobile) {
+		min-height: rem(643);
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__text {
+		font-size: rem(36);
+		font-weight: 400;
+		position: relative;
+		z-index: 2;
+		max-width: rem(820);
+		line-height: 1.3;
+
+		@media (max-width: $tablet) {
+			font-size: rem(33);
+		}
+
+		@media (max-width: $mobile) {
+			font-size: rem(28);
+		}
+
+		@media (max-width: $mobileSmall) {
+			font-size: rem(24);
+		}
+
+		span {
+			font-weight: 600;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(54);
+
+			@media (max-width: $mobile) {
+				margin-bottom: rem(40);
+			}
+		}
+	}
+
+	&__btn {
+		@media (any-hover: hover) {
+			&:hover {
+				top: rem(-10);
+			}
+		}
+	}
+}
+
 .benefits {
 	background: #101010;
 	padding: rem(80) rem(0) rem(60);
+
 	@media (max-width: $tablet) {
 		padding: rem(50) rem(0);
 	}
+
 	@media (max-width: $mobile) {
 		padding: rem(35) rem(0);
 	}
+
 	&__container {
 		@media (max-width: $tablet) {
 			padding: rem(0) rem(21);
 		}
 	}
+
 	&__title {
 		text-align: center;
+
 		&:not(:last-child) {
 			margin-bottom: rem(38);
+
 			@media (max-width: $tablet) {
 				margin-bottom: rem(28);
 			}
 		}
 	}
+
 	&__cols {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: rem(20);
 		position: relative;
+
 		&::before,
 		&::after {
 			content: "";
@@ -39,19 +146,24 @@
 			width: 30%;
 			// background: red;
 			height: 20%;
+
 			@media (max-width: $tablet) {
 				display: none;
 			}
 		}
+
 		&::before {
 			bottom: 20%;
 		}
+
 		&::after {
 			top: 20%;
 		}
+
 		@media (max-width: $tablet) {
 			grid-template-columns: 1fr 1fr;
 		}
+
 		@media (max-width: $mobile) {
 			gap: rem(10);
 			grid-template-columns: 1fr;
@@ -75,21 +187,26 @@
 	z-index: 3;
 	text-align: center;
 	transition: 0.3s;
+
 	@media (max-width: $pc) {
 		padding: rem(16) rem(24);
 	}
+
 	@media (max-width: $tablet) {
 		min-height: rem(120);
 	}
+
 	@media (any-hover: hover) {
 		&:hover {
 			background: rgba(111, 190, 62, 0.17);
 		}
 	}
+
 	&__top {
 		display: flex;
 		align-items: center;
 		gap: rem(10);
+
 		&:not(:last-child) {
 			margin-bottom: rem(15);
 		}
@@ -106,6 +223,7 @@
 		@media (max-width: $tablet) {
 			transform: scale(0.7);
 		}
+
 		// &:not(:last-child) {
 		// 	margin-bottom: rem(15);
 		// 	@media (max-width: $mobile) {
@@ -113,37 +231,47 @@
 		// 	}
 		// }
 	}
+
 	&__cap {
 		font-weight: 400;
 		font-size: rem(20);
 		color: #83ef41;
+
 		@media (max-width: $tablet) {
 			font-size: rem(18);
 		}
+
 		@media (max-width: $mobile) {
 			font-size: rem(16);
 		}
+
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
 		}
+
 		&:not(:last-child) {
 			margin-bottom: rem(15);
+
 			@media (max-width: $mobile) {
 				margin-bottom: rem(10);
 			}
 		}
 	}
+
 	&__descr {
 		font-weight: 400;
 		font-size: rem(20);
 		line-height: math.div(30, 20);
 		text-align: center;
+
 		@media (max-width: $tablet) {
 			font-size: rem(18);
 		}
+
 		@media (max-width: $mobile) {
 			font-size: rem(16);
 		}
+
 		@media (max-width: $mobileSmall) {
 			font-size: rem(14);
 		}
@@ -156,6 +284,7 @@
 	background: #101010;
 	padding: rem(122) rem(0) rem(80);
 	position: relative;
+
 	&::after {
 		content: "";
 		position: absolute;
@@ -168,13 +297,16 @@
 		mix-blend-mode: lighten;
 		background: url("@img/plans/bg.png") 50% / cover no-repeat;
 		z-index: 2;
+
 		@media (max-width: $tablet) {
 			display: none;
 		}
 	}
+
 	@media (max-width: $tablet) {
 		padding: rem(100) rem(0) rem(50);
 	}
+
 	@media (max-width: $mobile) {
 		padding: rem(60) rem(0) rem(35);
 	}
@@ -182,14 +314,15 @@
 
 	&__models {
 		padding-bottom: rem(60);
+
 		@media (max-width: $tablet) {
 			padding-top: rem(30);
 			padding-bottom: rem(30);
 		}
 	}
 
-	&__container {
-	}
+	&__container {}
+
 	&__title {
 		text-align: center;
 		position: relative;
@@ -197,38 +330,48 @@
 		font-size: rem(48);
 		text-align: center;
 		font-weight: 600;
+
 		@media (max-width: $tablet) {
 			font-size: rem(42);
 		}
+
 		@media (max-width: $mobile) {
 			font-size: rem(38);
 		}
+
 		@media (max-width: $mobileSmall) {
 			font-size: rem(32);
 		}
+
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
 	}
+
 	&__cols {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: rem(20);
 		position: relative;
 		z-index: 3;
+
 		@media (max-width: $pc) {
 			grid-template-columns: 1fr 1fr;
 		}
+
 		@media (max-width: $tablet) {
 			gap: rem(10);
 		}
+
 		@media (max-width: $mobile) {
 			grid-template-columns: 1fr;
 		}
+
 		&:not(:last-child) {
 			margin-bottom: rem(20);
 		}
 	}
+
 	&__descr {
 		max-width: rem(860);
 		text-align: center;
@@ -239,9 +382,11 @@
 		line-height: 1.2;
 		color: rgba(255, 255, 255, 0.5);
 		margin: 0 auto;
+
 		@media (max-width: $tablet) {
 			font-size: rem(12);
 		}
+
 		@media (max-width: $mobileSmall) {
 			font-size: rem(10);
 		}
@@ -257,86 +402,107 @@
 	flex-direction: column;
 	padding: rem(20) rem(16);
 	transition: box-shadow 0.3s;
+
 	@media (max-width: $tablet) {
 		padding: rem(22) rem(25);
 	}
+
 	@media (any-hover: hover) {
 		&:hover {
 			box-shadow: 0 rem(10) rem(30) 0 rgba(111, 190, 62, 0.24);
 		}
 	}
+
 	&__label {
 		font-weight: 500;
 		font-size: rem(25);
 		line-height: 1;
+
 		@media (max-width: $tablet) {
 			font-size: rem(23);
 		}
+
 		@media (max-width: $mobile) {
 			font-size: rem(20);
 		}
+
 		&:not(:last-child) {
 			margin-bottom: rem(8);
+
 			@media (max-width: $mobile) {
 				margin-bottom: rem(20);
 			}
 		}
 	}
+
 	&__text {
 		font-weight: 500;
 		font-size: rem(14);
 		color: rgba(255, 255, 255, 0.7);
 		line-height: 1;
+
 		@media (min-width: $mobile) {
 			min-height: rem(42);
 			display: flex;
 			align-items: center;
 		}
+
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
 	}
+
 	&__cap {
 		font-weight: 500;
 		font-size: rem(14);
 		line-height: 1;
+
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
 	}
+
 	&__list {
 		flex: auto;
+
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
 	}
+
 	&__item {
 		display: flex;
 		align-items: center;
 		gap: rem(6);
 		padding: rem(10) rem(0);
+
 		&_pc {
 			@media (max-width: $pc) {
 				display: none;
 			}
 		}
+
 		&:not(:last-child) {
 			border-bottom: rem(1) solid rgba(255, 255, 255, 0.07);
 		}
 	}
+
 	&__icon {
 		display: flex;
 		align-items: center;
 	}
+
 	&__descr {
 		font-weight: 500;
 		font-size: rem(14);
 		color: rgba(255, 255, 255, 0.7);
 		line-height: 1.2;
+
 		@media (max-width: $tablet) {
 			font-size: rem(12);
 		}
 	}
+
 	&__bottom {
 		display: flex;
 		align-items: center;
@@ -344,6 +510,7 @@
 		gap: rem(3);
 		margin: rem(0) rem(-10);
 	}
+
 	&__price-month {
 		font-weight: 500;
 		font-size: rem(12);
@@ -352,12 +519,13 @@
 		border-radius: rem(8);
 		padding: rem(3) rem(10);
 		cursor: default;
-		
+
 		span {
 			font-size: rem(26);
 			color: #fff;
 		}
 	}
+
 	&__price-year {
 		position: relative;
 		font-weight: 500;
@@ -379,6 +547,7 @@
 			}
 		}
 	}
+
 	&__disc {
 		position: absolute;
 		font-weight: 500;
@@ -392,6 +561,7 @@
 		padding: rem(0) rem(5);
 		display: inline-flex;
 	}
+
 	&__toggle {
 		font-size: rem(14);
 		transition: color 0.3s ease 0s;
@@ -411,9 +581,11 @@
 		transition: all 0.3s;
 		font-weight: 500;
 		background: #6fbe3e;
+
 		&::after {
 			content: none;
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				color: #000;
@@ -424,5 +596,5 @@
 }
 
 .plan__hidden {
-  display: none;
+	display: none;
 }

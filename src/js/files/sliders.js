@@ -88,6 +88,28 @@ function initSliders() {
 			// on: {}
 		})
 	}
+	if (document.querySelector('.hero-plans__slider')) {
+		new Swiper('.hero-plans__slider', {
+			modules: [Navigation, Pagination, Autoplay],
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 800,
+
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: true
+			},
+			pagination: {
+				el: '.hero-plans__pagination',
+				clickable: true,
+			},
+
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+		})
+	}
 }
 
 window.addEventListener("load", () => initSliders())

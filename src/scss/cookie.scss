@@ -43,9 +43,11 @@
     @media (max-width: $tablet) {
         font-size: 1.125rem;
     }
+
     @media (max-width: $mobile) {
         font-size: 1rem;
     }
+
     @media (max-width: $mobileSmall) {
         font-size: 0.875rem;
     }
@@ -70,11 +72,11 @@
     display: -ms-inline-flexbox;
     display: inline-flex;
     -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     text-align: center;
     border-radius: 1.5rem;
     padding: 0.5rem 1rem;
@@ -119,10 +121,21 @@
 .cookie-widget {
     border-radius: 50%;
     padding: 10px;
-    box-shadow: 0 0 4px rgba(0,0,0,0.6);
-    &::after {
-		content: none;
-	}
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    color: #fff;
+
+    svg {
+        width: 31px;
+        height: 31px;
+        fill: currentColor;
+        transition: fill 0.3s;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: #000;
+        }
+    }
 }
 
 .cookie-hidden {
@@ -142,6 +155,7 @@
     @media (max-width: $mobile) {
         padding: rem(40) rem(20);
     }
+
     @media (max-width: $mobileSmall) {
         padding: rem(30) rem(20);
     }
@@ -175,9 +189,11 @@
     @media (max-width: $tablet) {
         font-size: 0.875rem;
     }
+
     @media (max-width: $mobile) {
         font-size: 0.725rem;
     }
+
     @media (max-width: $mobileSmall) {
         font-size: 0.6rem;
     }
@@ -186,6 +202,7 @@
 .popup-cookie-link {
     transition: color 0.3s ease 0s;
     color: #6fbe3e;
+
     @media (any-hover: hover) {
         &:hover {
             color: #fff;
@@ -222,9 +239,11 @@
     @media (max-width: $tablet) {
         font-size: 0.875rem;
     }
+
     @media (max-width: $mobile) {
         font-size: 0.725rem;
     }
+
     @media (max-width: $mobileSmall) {
         font-size: 0.6rem;
     }
@@ -241,11 +260,11 @@
     width: 50px;
     height: 25px;
 }
-  
+
 .popup-cookie-toggle-input {
     display: none;
 }
-  
+
 .popup-cookie-toggle-label {
     position: absolute;
     width: 100%;
@@ -267,11 +286,11 @@
         transition: transform 0.3s;
     }
 }
-  
-.popup-cookie-toggle-input:checked + .popup-cookie-toggle-label {
+
+.popup-cookie-toggle-input:checked+.popup-cookie-toggle-label {
     background-color: #6fbe3e;
 }
-  
-.popup-cookie-toggle-input:checked + .popup-cookie-toggle-label::after {
+
+.popup-cookie-toggle-input:checked+.popup-cookie-toggle-label::after {
     transform: translateX(25px);
 }

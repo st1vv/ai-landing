@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  @@include('html/head.html', { "title":"Scrooge Frog Subscription plans" })
+  @@include('html/head.html', { "title":"ScroogeFrog Subscription plans" })
 
   <body>
     <div class="wrapper">
@@ -34,9 +34,9 @@
               <div class="bottom-header__menu menu">
                 <nav class="menu__body">
                   <ul class="menu__list">
-                    <li class="menu__item">
+                    <!-- <li class="menu__item">
                       <a class="menu__link" href="/#cpc_antifraud">Benefits</a>
-                    </li>
+                    </li> -->
                     <li class="menu__item">
                       <a class="menu__link menu__link_current" href=""
                         >Subscription plans</a
@@ -56,10 +56,10 @@
                   </ul>
 
                   <a
-                    class="menu__login"
+                    class=" btn-green menu__login"
                     href="https://dashboard.ai.scroogefrog.com/login"
                     target="_blank"
-                    >Sign In</a
+                    >Sign In / Sign Up</a
                   >
                 </nav>
               </div>
@@ -71,82 +71,194 @@
         <section class="hero">
           <div class="hero__slider swiper">
             <div class="hero__wrapper swiper-wrapper">
-              <div class="swiper-slide slide-hero">
-                <img
-                  class="slide-hero__bg"
-                  srcset="@img/plans/slider-1@2x.jpg 2x"
-                  src="@img/plans/slider-1.jpg"
-                  width="1443"
-                  height="773"
-                  alt=""
-                />
+              <div class="swiper-slide slide-hero slide-hero_1">
                 <div class="slide-hero__container">
-                  <div class="slide-hero__text">
-                    <p>
-                      Every ad impression is
-                      <span>analyzed by our AI engine in milliseconds </span>
-                      — detecting patterns that manual tools miss
-                    </p>
+                  <div class="slide-hero__body slide-hero__body_1">
+                    <div class="slide-hero__left">
+                      <div class="slide-hero__decor slide-hero__decor_1"></div>
+                      <h1 class="slide-hero__title">
+                        ScroogeFrog AI — a platform that helps you
+                        <span>save your advertising budget</span>
+                      </h1>
+                      <div class="slide-hero__descr">
+                        Traffic Audit, Google Ads Audit, and AI-powered
+                        recommendations —
+                        <span
+                          >all in one place, easy to understand, and showing you
+                          the real quality of the traffic you’re paying
+                          for</span
+                        >
+                      </div>
+                      <div class="slide-hero__btnrapper">
+                        <a
+                          class="slide-hero__btn btn"
+                          href="https://dashboard.ai.scroogefrog.com/login"
+                          target="_blank"
+                          >Start a free trial</a
+                        >
+                      </div>
+                    </div>
+                    <div class="slide-hero__right">
+                      <div class="slide-hero__image slide-hero__image_1">
+                        <img src="@img/hero/1.png" width="484" alt="" />
+                      </div>
+                    </div>
                   </div>
-                  <a
-                    class="slide-hero__btn btn"
-                    target="_blank"
-                    href="https://dashboard.ai.scroogefrog.com/login"
-                    >START A FREE TRIAL</a
-                  >
                 </div>
               </div>
               <div class="swiper-slide slide-hero">
-                <img
-                  class="slide-hero__bg"
-                  srcset="@img/plans/slider-2@2x.jpg 2x"
-                  src="@img/plans/slider-2.jpg"
-                  width="1443"
-                  height="773"
-                  alt=""
-                />
                 <div class="slide-hero__container">
-                  <div class="slide-hero__text">
-                    <p>
-                      By eliminating invalid clicks and fake impressions,
-                      ScroogeFrog AI
-                      <span
-                        >redirects your ad spend toward real users and higher
-                        income</span
+                  <div class="slide-hero__body slide-hero__body_2">
+                    <div class="slide-hero__decor slide-hero__decor_2"></div>
+                    <div class="slide-hero__decor slide-hero__decor_3"></div>
+                    <div class="slide-hero__decor slide-hero__decor_4"></div>
+                    <h1 class="slide-hero__title">
+                      Losing money? We’ll quickly show you where it’s going —
+                      <span>and how to stop it</span>
+                    </h1>
+                    <div class="slide-hero__image slide-hero__image_2">
+                      <img
+                        src="@img/hero/2.png"
+                        width="619"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </div>
+                    <div class="slide-hero__btnrapper">
+                      <a
+                        class="slide-hero__btn btn"
+                        href="https://dashboard.ai.scroogefrog.com/login"
+                        target="_blank"
+                        >Start a free trial</a
                       >
-                    </p>
+                    </div>
+                    <ul class="hero-cols">
+                      <li class="hero-cols__item">
+                        <div class="hero-cols__icon">
+                          <img
+                            src="@img/hero/icons/1.svg"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </div>
+                        <div class="hero-cols__descr">
+                          Your budget is disappearing, <br />
+                          but <span>you’re not getting any leads</span>
+                        </div>
+                      </li>
+                      <li class="hero-cols__item">
+                        <div class="hero-cols__icon">
+                          <img
+                            src="@img/hero/icons/2.svg"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </div>
+                        <div class="hero-cols__descr">
+                          The reports are complicated —
+                          <span>and no one actually reads them</span>
+                        </div>
+                      </li>
+                      <li class="hero-cols__item">
+                        <div class="hero-cols__icon">
+                          <img
+                            src="@img/hero/icons/3.svg"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </div>
+                        <div class="hero-cols__descr">
+                          Bots and fake clicks are <br />
+                          <span>eating up your monthly budget</span>
+                        </div>
+                      </li>
+                      <li class="hero-cols__item">
+                        <div class="hero-cols__icon">
+                          <img
+                            src="@img/hero/icons/4.svg"
+                            loading="lazy"
+                            alt=""
+                          />
+                        </div>
+                        <div class="hero-cols__descr">
+                          And you’re not even sure <br />
+                          <span>your agency is being honest</span>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <a
-                    class="slide-hero__btn btn"
-                    target="_blank"
-                    href="https://dashboard.ai.scroogefrog.com/login"
-                    >START A FREE TRIAL</a
-                  >
                 </div>
               </div>
-              <div class="swiper-slide slide-hero">
-                <img
-                  class="slide-hero__bg"
-                  srcset="@img/plans/slider-3@2x.jpg 2x"
-                  src="@img/plans/slider-3.jpg"
-                  width="1443"
-                  height="773"
-                  alt=""
-                />
+              <div class="swiper-slide slide-hero slide-hero_3">
                 <div class="slide-hero__container">
-                  <div class="slide-hero__text">
-                    <p>
-                      <span>Only anonymized data</span> in accordance with the
-                      GDPR. We don’t store personal information — each dataset
-                      is hashed while it arrives
-                    </p>
+                  <div class="slide-hero__body slide-hero__body_3">
+                    <h1 class="slide-hero__title">
+                       The solution: transparency and automation —
+                      <span>fully customized for you</span>
+                    </h1>
+                    <div class="slide-hero__btnrapper">
+                      <a
+                        class="slide-hero__btn btn"
+                        href="https://dashboard.ai.scroogefrog.com/login"
+                        target="_blank"
+                        >Start a free trial</a
+                      >
+                    </div>
+                    <div class="hero-solutions">
+                      <div class="hero-solutions__slider swiper">
+                        <div class="hero-solutions__wrapper swiper-wrapper">
+                          <div class="swiper-slide hero-solution">
+                            <div class="hero-solution__image">
+                              <img
+                                srcset="@img/hero/solutions/1@2x.jpg 2x"
+                                src="@img/hero/solutions/1.jpg"
+                                loading="lazy"
+                                alt=""
+                              />
+                            </div>
+                            <div class="hero-solution__descr">
+                              Automatic traffic audit — <br />
+                              <span>we detect bots and fraud</span>
+                            </div>
+                          </div>
+                          <div class="swiper-slide hero-solution">
+                            <div class="hero-solution__image">
+                              <img
+                                srcset="@img/hero/solutions/2@2x.jpg 2x"
+                                src="@img/hero/solutions/2.jpg"
+                                loading="lazy"
+                                alt=""
+                              />
+                            </div>
+                            <div class="hero-solution__descr">
+                              Google Ads Audit — <br />
+                              <span
+                                >see which campaigns are eating up your
+                                budget</span
+                              >
+                            </div>
+                          </div>
+                          <div class="swiper-slide hero-solution">
+                            <div class="hero-solution__image">
+                              <img
+                                srcset="@img/hero/solutions/3@2x.jpg 2x"
+                                src="@img/hero/solutions/3.jpg"
+                                loading="lazy"
+                                alt=""
+                              />
+                            </div>
+                            <div class="hero-solution__descr">
+                              Custom solution just for your traffic —
+                              <span
+                                >clear action steps on what to turn off or
+                                optimize</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <a
-                    class="slide-hero__btn btn"
-                    target="_blank"
-                    href="https://dashboard.ai.scroogefrog.com/login"
-                    >START A FREE TRIAL</a
-                  >
                 </div>
               </div>
             </div>
@@ -480,7 +592,7 @@
                   </li> -->
                 </ul>
                 <a
-                  class="plan__btn btn"
+                  class="plan__btn btn-green"
                   href="https://linktr.ee/ai_antifraud_scroogefrog"
                   >Contact a manager</a
                 >
@@ -643,10 +755,10 @@
             </div>
             <div class="models__bottom">
               <a
-                class="models__btn btn"
+                class="btn"
                 target="_blank"
                 href="https://dashboard.ai.scroogefrog.com/login"
-                >START A FREE TRIAL</a
+                >Start a free trial</a
               >
             </div>
           </div>
@@ -699,7 +811,7 @@
                       placeholder="Mail"
                     />
                   </div>
-                  <button class="form-offer__btn btn">SEND YOUR FORM</button>
+                  <button class="form-offer__btn">SEND YOUR FORM</button>
                 </div>
               </form>
             </div>
