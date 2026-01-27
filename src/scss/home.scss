@@ -643,6 +643,7 @@
 	&__labels {
 		display: flex;
 		gap: rem(20);
+		align-items: stretch;
 		@media (max-width: $mobile) {
 			flex-direction: column;
 		}
@@ -661,6 +662,9 @@
 		font-size: rem(24);
 		line-height: math.div(36, 24);
 		padding: rem(16);
+		display: flex;
+  		align-items: center;
+  		justify-content: center; 
 		@media (max-width: $tablet) {
 			font-size: rem(20);
 		}
