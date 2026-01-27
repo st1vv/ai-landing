@@ -13,7 +13,7 @@ function initSliders() {
 			modules: [Autoplay],
 			spaceBetween: 40,
 			loop: true,
-			speed: 700,
+			speed: 1400,
 			autoplay: {
 				delay: 1,
 				disableOnInteraction: true
@@ -88,14 +88,17 @@ function initSliders() {
 			// on: {}
 		})
 	}
-	if (window.innerWidth <= 992 && document.querySelector('.hero-solutions__slider')) {
-		new Swiper('.hero-solutions__slider', {
+	if (window.innerWidth <= 992) {
+		const heroSolutionsSliders = document.querySelectorAll('.hero-solutions__slider');
+		heroSolutionsSliders.forEach(slider => {
+			new Swiper(slider, {
 			nested: true,
 			resistanceRatio: 0,
 			slidesPerView: 'auto',
 			spaceBetween: 0,
 			speed: 300,
-		})
+			});
+		});
 	}
 }
 
