@@ -218,6 +218,8 @@
 		}
 		@media (max-width: $tablet) {
 			margin: 0 auto;
+			width: 100%;
+    		max-width: 100%; 
 		}
 		img {
 			width: 100%;
@@ -235,6 +237,11 @@
 			&:not(:last-child) {
 				margin-bottom: rem(30);
 			}
+
+			@media (max-width: $tablet) {
+				width: 100%;
+				max-width: 100%;
+    		}
 		}
 	}
 }
