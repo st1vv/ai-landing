@@ -631,7 +631,7 @@
 	padding-bottom: rem(60);
 	@media (max-width: $tablet) {
 		padding-top: rem(80);
-		padding-bottom: rem(0);
+		padding-bottom: rem(30);
 	}
 	&__container {
 	}
@@ -1728,9 +1728,20 @@
 		@media (max-width: $tablet) {
 			gap: rem(31);
 			grid-template-columns: 1fr 1fr;
+
+			& > .solution:nth-child(3) {
+				grid-column: 1 / -1;
+				justify-self: center;
+				max-width: rem(420);
+			}
 		}
 		@media (max-width: $mobile) {
 			grid-template-columns: 1fr;
+			max-width: 100%;
+
+			> .solution:nth-child(3) {
+				max-width: none;
+			}
 		}
 		&:not(:last-child) {
 			margin-bottom: rem(50);
