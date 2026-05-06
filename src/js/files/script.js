@@ -55,11 +55,11 @@ if (document.querySelector(".form-offer")) {
   });
 }
 
-if (document.querySelector(".left-help-spollers__title")) {
-  const spollerLinks = document.querySelectorAll(".left-help-spollers__title");
+if (document.querySelector(".menu_button")) {
+  const spollerLinks = document.querySelectorAll(".menu_button");
   spollerLinks.forEach((spollerLink) => {
     spollerLink.addEventListener("click", (e) => {
-      const link = spollerLink.getAttribute("href");
+      const link = spollerLink.getAttribute("data-href");
       const absoluteLink = window.location.href;
 
       if (absoluteLink.includes(link)) {
