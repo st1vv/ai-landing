@@ -562,6 +562,14 @@ body::after {
   content: none;
 }
 
+.menu__login_sign-in {
+  display: none;
+}
+
+.menu__login_sign-up {
+  display: inline;
+}
+
 .menu__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -573,7 +581,7 @@ body::after {
 }
 
 .menu__item:not(:last-child) {
-  margin-right: 1.5625rem;
+  margin-right: 0.625rem;
 }
 
 .menu__link {
@@ -586,6 +594,24 @@ body::after {
 .menu__link_current {
   color: #6fbe3e;
   text-shadow: 0 0 4px rgb(0, 0, 0);
+}
+
+.menu__producthunt {
+  width: 200px;
+  height: auto;
+}
+
+.producthunt__logo {
+  width: 200px;
+  height: auto;
+}
+
+.producthunt__menu {
+  display: list-item;
+}
+
+.producthunt__wrap {
+  display: none;
 }
 
 .footer {
@@ -3831,6 +3857,14 @@ body::after {
             align-items: center;
   }
 
+  .producthunt__menu {
+    display: none;
+  }
+
+  .producthunt__wrap {
+    display: block;
+  }
+
   .slide-hero_1 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4101,6 +4135,14 @@ body::after {
     width: 12.5rem;
   }
 
+  .menu__login_sign-in {
+    display: inline;
+  }
+
+  .menu__login_sign-up {
+    display: none;
+  }
+
   .menu__login {
     padding: 0.625rem 1.125rem;
   }
@@ -4109,12 +4151,24 @@ body::after {
     gap: 1.25rem;
   }
 
+  .menu__item {
+    text-align: center;
+  }
+
   .menu__item:not(:last-child) {
-    margin-right: 0.625rem;
+    margin-right: 0.375rem;
   }
 
   .menu__link {
     font-size: 0.9375rem;
+  }
+
+  .menu__producthunt {
+    width: 140px;
+  }
+
+  .producthunt__logo {
+    width: 140px;
   }
 
   .footer-left__logo {
@@ -4257,6 +4311,14 @@ body::after {
             flex: 1 1 100%;
   }
 
+  .menu__login_sign-in {
+    display: none;
+  }
+
+  .menu__login_sign-up {
+    display: inline;
+  }
+
   .menu__login {
     padding: 0.625rem 1.875rem;
   }
@@ -4292,6 +4354,14 @@ body::after {
 
   .menu__link {
     font-size: 1.125rem;
+  }
+
+  .menu__producthunt {
+    width: 200px;
+  }
+
+  .producthunt__logo {
+    width: 200px;
   }
 
   .footer-left__logo {
