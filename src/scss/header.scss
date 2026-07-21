@@ -362,3 +362,35 @@
 }
 
 //====================================================================================================
+
+.producthunt {
+	&__logo {
+		width: 200px;
+		height: auto;
+
+		@media (max-width: $pc) {
+			width: 140px;
+		}
+
+		@media (max-width: $tablet) {
+			width: 200px;
+		}
+	}
+
+	&__menu {
+		display: list-item;
+
+		@media (min-width: $tablet) {
+			display: none;
+		}
+
+	}
+
+	&__wrap {
+		display: none;
+
+		@media (min-width: $tablet) {
+			display: block;
+		}
+	}
+}
