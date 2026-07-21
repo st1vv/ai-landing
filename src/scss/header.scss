@@ -7,11 +7,12 @@
 		z-index: 5;
 		position: absolute;
 	}
-	&__top {
-	}
-	&__bottom {
-	}
+
+	&__top {}
+
+	&__bottom {}
 }
+
 .top-header {
 	background: #6fbe3e;
 	padding: rem(11) rem(0);
@@ -21,38 +22,46 @@
 	font-weight: 600;
 	text-align: center;
 	margin-bottom: rem(26);
+
 	@media (max-width: $pc) {
 		margin-bottom: rem(20);
 	}
+
 	@media (max-width: $tablet) {
 		margin-bottom: 0;
 		padding: rem(7) rem(0);
 	}
-	&__container {
-	}
+
+	&__container {}
+
 	&__descr {
 		font-size: rem(18);
 		line-height: 1.23;
 	}
 }
+
 .bottom-header {
 	position: relative;
+
 	.show-menu & {
 		position: fixed;
 		top: rem(20);
 		left: 0;
 		z-index: 10;
 		width: 100%;
+
 		@media (max-width: $tablet) {
 			top: 0;
 		}
 	}
-	&__container {
-	}
+
+	&__container {}
+
 	&__wrapper {
 		@media (min-width: $tablet) {
 			border-radius: rem(20);
 		}
+
 		background: rgba(125, 125, 125, 0.1);
 		padding: rem(16) rem(30);
 		display: flex;
@@ -61,70 +70,85 @@
 
 		align-items: center;
 		justify-content: space-between;
+
 		@media (max-width: $tablet) {
 			margin: rem(0) rem(-30);
 			justify-content: center;
 			padding: rem(12) rem(30);
 			flex-wrap: wrap;
 		}
+
 		@media (max-width: $mobile) {
 			padding: rem(8) rem(30);
 		}
+
 		@media (max-width: em(389.98)) {
 			padding: rem(8) rem(15);
 			margin: rem(0) rem(-15);
 		}
+
 		@media (max-width: em(389.98)) {
 			justify-content: flex-start;
 		}
 	}
+
 	&__menu {
 		@media (min-width: $tablet) {
 			display: flex;
 			align-items: center;
 		}
 	}
+
 	&__logo {
 		flex: 0 0 rem(220);
 		width: rem(220);
+
 		@media (max-width: $pc) {
 			flex: 0 0 rem(200);
 			width: rem(200);
 		}
+
 		@media (max-width: $tablet) {
 			flex: 0 0 rem(180);
 			display: flex;
 			justify-content: center;
 			width: rem(180);
 		}
+
 		@media (max-width: $mobile) {
 			flex: 0 0 rem(160);
 			width: rem(160);
 		}
+
 		@media (max-width: $mobileSmall) {
 			flex: 0 0 rem(150);
 			width: rem(140);
 		}
+
 		@media (max-width: em(389.98)) {
 			flex: 0 0 rem(140);
 			width: rem(140);
 			justify-content: flex-start;
 		}
+
 		img {
 			width: 100%;
-  			height: auto;
-  			max-width: 192px;
+			height: auto;
+			max-width: 192px;
 
 			@media (max-width: $mobile) {
 				max-width: 160px;
 			}
+
 			@media (max-width: $mobileSmall) {
 				max-width: 140px;
 			}
 		}
 	}
+
 	&__icon {
 		display: none;
+
 		@media (max-width: $tablet) {
 			display: block;
 			position: absolute;
@@ -138,20 +162,25 @@
 			z-index: 5;
 			transform: rotate(180deg);
 			transition: transform 0.3s ease 0s;
+
 			&._spoller-active {
 				transform: rotate(0deg);
 			}
 		}
+
 		@media (max-width: $mobile) {
 			top: rem(11);
 		}
+
 		@media (max-width: $mobileSmall) {
 			top: rem(10);
 		}
+
 		@media (max-width: em(389.98)) {
 			right: rem(15);
 		}
 	}
+
 	&__btn {
 		padding: rem(20) rem(30);
 
@@ -166,43 +195,74 @@
 		}
 	}
 }
+
 .menu {
 	@media (max-width: $tablet) {
 		flex: 1 1 100%;
 	}
+
 	&__login {
 		font-weight: 500;
 		font-size: rem(16);
 		color: #fff;
 		background: #6fbe3e;
 		border-radius: rem(40);
-		box-shadow: 0 0 4px rgba(0,0,0,0.6);
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
 		transition: all 0.3s;
-		
+
 		&::after {
 			content: none;
 		}
-		
+
+		&_sign-in {
+			display: none;
+
+			@media (max-width: $pc) {
+				display: inline;
+			}
+
+			@media (max-width: $tablet) {
+				display: none;
+			}
+		}
+
+		&_sign-up {
+			display: inline;
+
+			@media (max-width: $pc) {
+				display: none;
+			}
+
+			@media (max-width: $tablet) {
+				display: inline;
+			}
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				color: #000;
 				background-color: #fff;
 			}
 		}
+
 		@media (max-width: $pc) {
 			padding: rem(10) rem(18);
 		}
+
 		@media (max-width: $tablet) {
 			padding: rem(10) rem(30);
 		}
 	}
+
 	&__body {
 		display: flex;
 		align-items: center;
 		gap: rem(30);
+
 		@media (max-width: $pc) {
 			gap: rem(20);
 		}
+
 		@media (max-width: $tablet) {
 			// position: absolute;
 			flex-direction: column;
@@ -215,6 +275,7 @@
 			// pointer-events: none;
 			// visibility: hidden;
 		}
+
 		.menu-open & {
 			@media (max-width: $tablet) {
 				top: 100%;
@@ -224,48 +285,78 @@
 			}
 		}
 	}
+
 	&__list {
 		@media (min-width: $tablet) {
 			display: flex;
 			align-items: center;
 		}
 	}
+
 	&__item {
+
+		@media (max-width: $pc) {
+			text-align: center;
+		}
+
 		@media (max-width: $tablet) {
 			text-align: center;
 			padding: rem(9) rem(0);
 			// background: rgba(255, 255, 255, 0.2);
 			// backdrop-filter: blur(rem(55));
 		}
+
 		&:not(:last-child) {
-			margin-right: rem(25);
+			margin-right: rem(10);
+
 			@media (max-width: $pc) {
-				margin-right: rem(10);
+				margin-right: rem(6);
+
+
 			}
+
 			@media (max-width: $tablet) {
 				margin-right: 0;
 			}
 		}
 	}
+
 	&__link {
 		font-size: rem(16);
 		transition: all 0.3s ease 0s;
 		font-weight: 500;
+
 		@media (max-width: $pc) {
 			font-size: rem(15);
 		}
+
 		@media (max-width: $tablet) {
 			font-size: rem(18);
 		}
+
 		&_current {
 			color: #6fbe3e;
-			text-shadow: 0 0 4px rgba(0,0,0,1);
+			text-shadow: 0 0 4px rgba(0, 0, 0, 1);
 		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				color: #6fbe3e;
-				text-shadow: 0 0 4px rgba(0,0,0,1);
+				text-shadow: 0 0 4px rgba(0, 0, 0, 1);
 			}
+		}
+	}
+
+	&__producthunt {
+		width: 200px;
+		height: auto;
+
+		@media (max-width: $pc) {
+			width: 140px;
+		}
+
+		@media (max-width: $tablet) {
+			width: 200px;
 		}
 	}
 }
