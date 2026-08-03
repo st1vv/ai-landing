@@ -119,3 +119,29 @@ if (document.querySelector(".plan")) {
     });
   });
 }
+
+if (document.querySelectorAll(".btn_login_link").length) {
+  const currentParams = new URLSearchParams(window.location.search);
+
+  if ([...currentParams.keys()].length) {
+    const btnLinks = document.querySelectorAll(".btn_login_link");
+
+    btnLinks.forEach((btnLink) => {
+      if (!btnLink.hasAttribute("href")) return;
+
+      try {
+        const url = new URL(btnLink.href, window.location.origin);
+
+        currentParams.forEach((value, key) => {
+          if (!url.searchParams.has(key)) {
+            url.searchParams.set(key, value);
+          }
+        });
+
+        btnLink.href = url.toString();
+      } catch (e) {
+        console.error("Error", btnLink, e);
+      }
+    });
+  }
+}
