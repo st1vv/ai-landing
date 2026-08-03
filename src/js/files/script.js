@@ -75,7 +75,7 @@ if (document.querySelector(".menu_button")) {
 // setSpollerAction(document.querySelector('.right-help-spollers__title'))
 if (document.querySelector(".left-help-spollers__body button")) {
   const leftHelpBtns = document.querySelectorAll(
-    ".left-help-spollers__body button"
+    ".left-help-spollers__body button",
   );
   leftHelpBtns.forEach((leftHelpBtn) => {
     leftHelpBtn.addEventListener("click", () => {
@@ -115,33 +115,53 @@ if (document.querySelector(".plan")) {
         item.style.display = isHidden ? "flex" : "none";
       });
 
-      toggleBtn.textContent = isHidden ? "Less about the plan" : "More about the plan";
+      toggleBtn.textContent = isHidden
+        ? "Less about the plan"
+        : "More about the plan";
     });
   });
 }
 
-if (document.querySelectorAll(".btn_login_link").length) {
+(function preserveQueryParamsForLinks(selectors) {
   const currentParams = new URLSearchParams(window.location.search);
 
-  if ([...currentParams.keys()].length) {
-    const btnLinks = document.querySelectorAll(".btn_login_link");
+  if (![...currentParams.keys()].length) return;
 
-    btnLinks.forEach((btnLink) => {
-      if (!btnLink.hasAttribute("href")) return;
+  const selector = selectors.join(", ");
+  const links = document.querySelectorAll(selector);
 
-      try {
-        const url = new URL(btnLink.href, window.location.origin);
+  if (!links.length) return;
 
-        currentParams.forEach((value, key) => {
-          if (!url.searchParams.has(key)) {
-            url.searchParams.set(key, value);
-          }
-        });
+  links.forEach((link) => {
+    if (!link.hasAttribute("href")) return;
 
-        btnLink.href = url.toString();
-      } catch (e) {
-        console.error("Error", btnLink, e);
-      }
-    });
-  }
-}
+    const href = link.getAttribute("href");
+
+    if (
+      !href ||
+      href.startsWith("#") ||
+      href.startsWith("javascript:") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:")
+    ) {
+      return;
+    }
+
+    try {
+      const url = new URL(link.href, window.location.origin);
+
+      currentParams.forEach((value, key) => {
+        if (!url.searchParams.has(key)) {
+          url.searchParams.set(key, value);
+        }
+      });
+
+      link.href = url.toString();
+    } catch (e) {
+      console.error("Error preserving query params for", link, e);
+    }
+  });
+})([
+  ".menu__link",
+  ".btn_login_link",
+]);
