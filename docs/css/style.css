@@ -3622,14 +3622,83 @@ body::after {
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
+.plan__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.5rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.plan__head:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
 .plan__label {
   font-weight: 500;
   font-size: 1.5625rem;
   line-height: 1;
 }
 
-.plan__label:not(:last-child) {
-  margin-bottom: 0.5rem;
+.plan__trial {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #fff;
+  line-height: 0.5;
+  border: 0.0625rem solid rgba(111, 190, 62, 0.08);
+  border-radius: 0.375rem;
+  background: #6fbe3e;
+  padding: 0.25rem 0.625rem;
+  white-space: nowrap;
+  -webkit-animation: trialGlow 2s ease-in-out infinite;
+          animation: trialGlow 2s ease-in-out infinite;
+}
+
+.plan__trial img {
+  display: block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+@-webkit-keyframes trialGlow {
+  0%, 100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(111, 190, 62, 0.6);
+            box-shadow: 0 0 0 0 rgba(111, 190, 62, 0.6);
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 0.625rem 0.1875rem rgba(111, 190, 62, 0.6);
+            box-shadow: 0 0 0.625rem 0.1875rem rgba(111, 190, 62, 0.6);
+  }
+}
+
+@keyframes trialGlow {
+  0%, 100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(111, 190, 62, 0.6);
+            box-shadow: 0 0 0 0 rgba(111, 190, 62, 0.6);
+  }
+
+  50% {
+    -webkit-box-shadow: 0 0 0.625rem 0.1875rem rgba(111, 190, 62, 0.6);
+            box-shadow: 0 0 0.625rem 0.1875rem rgba(111, 190, 62, 0.6);
+  }
 }
 
 .plan__text {
@@ -5559,8 +5628,14 @@ body::after {
     font-size: 1.25rem;
   }
 
-  .plan__label:not(:last-child) {
-    margin-bottom: 1.25rem;
+  .plan__trial {
+    font-size: 0.75rem;
+    padding: 0.1875rem 0.5rem;
+  }
+
+  .plan__trial img {
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -6040,6 +6115,13 @@ body::after {
   .plan__btn:hover {
     color: #000;
     background-color: #fff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan__trial {
+    -webkit-animation: none;
+            animation: none;
   }
 }
 
