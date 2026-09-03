@@ -1,4 +1,4 @@
-const apiUrl = "https://ai.scroogefrog.com/files/faq.php";
+const apiUrl = "https://scroogefrog.ai/files/faq.php";
 
 if (document.querySelector(".spinner")) {
 
