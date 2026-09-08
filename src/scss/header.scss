@@ -214,28 +214,9 @@
 			content: none;
 		}
 
-		&_sign-in {
-			display: none;
-
-			@media (max-width: $pc) {
-				display: inline;
-			}
-
-			@media (max-width: $tablet) {
-				display: none;
-			}
-		}
 
 		&_sign-up {
 			display: inline;
-
-			@media (max-width: $pc) {
-				display: none;
-			}
-
-			@media (max-width: $tablet) {
-				display: inline;
-			}
 		}
 
 		@media (any-hover: hover) {
