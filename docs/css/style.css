@@ -4041,7 +4041,7 @@ body::after {
   font-weight: 500;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.7);
-  max-width: 33.125rem;
+  max-width: 36.25rem;
 }
 
 .refund-hero__text:not(:last-child) {
@@ -6837,6 +6837,10 @@ body::after {
 
   .refund-step__text:not(:last-child) {
     margin-bottom: 1.875rem;
+  }
+
+  .refund-step__br {
+    display: none;
   }
 
   .step-progress__labels {
