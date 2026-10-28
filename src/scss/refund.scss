@@ -32,19 +32,6 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 	@media (max-width: $mobileSmall) {
 		font-size: rem(30);
 	}
-	// Затемнение центра заголовка (как в макете)
-	&_shade,
-	&__shade {
-		background: radial-gradient(ellipse 48% 150% at 50% 120%, #4d4d4d 0%, #a3a3a3 55%, #fff 85%);
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	&__shade {
-		background: radial-gradient(ellipse 60% 160% at 50% 110%, #5a5a5a 0%, #b5b5b5 60%, #fff 95%);
-		-webkit-background-clip: text;
-		background-clip: text;
-	}
 }
 
 // Кнопка со стрелкой ↗
