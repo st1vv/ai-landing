@@ -118,3 +118,4 @@ import "./files/script.js";
 import "./files/cookie.js";
 import "./files/cookie-banner.js";
 import "./files/faq.js";
+import "./files/refund.js";
