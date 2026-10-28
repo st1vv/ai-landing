@@ -227,7 +227,7 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		font-weight: 500;
 		line-height: 1.5;
 		color: $refundMuted;
-		max-width: rem(530);
+		max-width: rem(580);
 		@media (max-width: $mobile) {
 			font-size: rem(14.5);
 			line-height: 1.3;
@@ -744,6 +744,11 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 			@media (max-width: $tablet) {
 				margin-bottom: rem(30);
 			}
+		}
+	}
+	&__br {
+		@media (max-width: $tablet) {
+			display: none;
 		}
 	}
 	&__widget {
