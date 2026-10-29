@@ -64,6 +64,9 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		background: rgba(255, 255, 255, 0.04);
 		border: rem(1) solid rgba($refundGreen, 0.15);
 		transition: all 0.3s ease 0s;
+		box-shadow: 0 0 0 0 rgba($refundGreen, 0.55);
+		// Пульсирующее кольцо вокруг кнопки
+		animation: demoPulse 1.6s cubic-bezier(0.8, 0, 0, 1) infinite;
 		&::before {
 			content: "";
 			position: absolute;
@@ -84,6 +87,7 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 			background: $refundGreen;
 			border-color: $refundGreen;
 			color: #fff;
+			transform: scale(1.1);
 			&::before {
 				border-color: $refundGreen;
 			}
@@ -91,6 +95,12 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 	}
 	@media (max-width: $mobile) {
 		font-size: rem(17.6);
+	}
+}
+
+@keyframes demoPulse {
+	100% {
+		box-shadow: 0 0 0 rem(16) rgba($refundGreen, 0);
 	}
 }
 
@@ -475,6 +485,7 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		font-size: rem(20);
 		font-weight: 700;
 		line-height: 1.5;
+		font-variant-numeric: tabular-nums;
 		&:not(:last-child) {
 			margin-bottom: rem(8);
 		}
@@ -629,12 +640,53 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 	padding: rem(26) rem(20) rem(38);
 	min-height: rem(284);
 	transition: background-color 0.3s ease 0s;
+	// Линии между шагами: прорисовываются после появления карточки
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		display: none;
+		background: rgba(255, 255, 255, 0.06);
+		pointer-events: none;
+		transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1) calc(var(--reveal-delay, 0s) + 0.4s);
+	}
+	&::before {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: rem(2);
+	}
+	&::after {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: rem(2);
+	}
+	._reveal-ready &:not(._revealed)::before {
+		transform: scaleY(0);
+	}
+	._reveal-ready &:not(._revealed)::after {
+		transform: scaleX(0);
+	}
 	@media (min-width: $tablet) {
-		&:nth-child(odd) {
-			border-right: rem(2) solid rgba(255, 255, 255, 0.06);
+		// Линии растут от центра сетки
+		&:nth-child(odd)::before {
+			display: block;
 		}
-		&:nth-child(-n + 2) {
-			border-bottom: rem(2) solid rgba(255, 255, 255, 0.06);
+		&:nth-child(1)::before {
+			transform-origin: bottom;
+		}
+		&:nth-child(3)::before {
+			transform-origin: top;
+		}
+		&:nth-child(-n + 2)::after {
+			display: block;
+		}
+		&:nth-child(1)::after {
+			transform-origin: right;
+		}
+		&:nth-child(2)::after {
+			transform-origin: left;
 		}
 		&:nth-child(n + 3) {
 			min-height: rem(277);
@@ -664,8 +716,8 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		&:first-child {
 			padding-top: rem(10);
 		}
-		&:not(:last-child) {
-			border-bottom: rem(2) solid rgba(255, 255, 255, 0.06);
+		&:not(:last-child)::after {
+			display: block;
 		}
 		&:last-child {
 			padding-bottom: 0;
@@ -825,16 +877,6 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		width: 58%;
 		border-radius: rem(27);
 		background: $refundGreen;
-		animation: refundProgress 3s ease-in-out infinite alternate;
-	}
-}
-
-@keyframes refundProgress {
-	from {
-		width: 52%;
-	}
-	to {
-		width: 64%;
 	}
 }
 
@@ -1314,6 +1356,21 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 			padding: rem(10) rem(9) rem(8) rem(10);
 			border-radius: rem(18);
 		}
+		// Мягкое зеленое свечение за рамкой
+		&::before {
+			content: "";
+			position: absolute;
+			inset: rem(-40);
+			z-index: -1;
+			border-radius: rem(70);
+			background: radial-gradient(ellipse closest-side, rgba($refundGreen, 0.22), transparent);
+			filter: blur(rem(30));
+			pointer-events: none;
+			transition: opacity 1.4s ease 0.4s;
+		}
+		._reveal-ready &:not(._revealed)::before {
+			opacity: 0;
+		}
 	}
 	&__video {
 		display: block;
@@ -1323,8 +1380,13 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		object-fit: cover;
 		border-radius: rem(30);
 		background: #000;
+		transition: filter 1.2s ease 0.3s;
 		@media (max-width: $mobile) {
 			border-radius: rem(14);
+		}
+		// Изображение проявляется из размытия
+		._reveal-ready .refund-demo__frame:not(._revealed) & {
+			filter: blur(rem(12)) brightness(0.4);
 		}
 	}
 	&__play {
@@ -1656,5 +1718,46 @@ $refundMuted: rgba(255, 255, 255, 0.7);
 		@media (max-width: $tablet) {
 			order: 3;
 		}
+	}
+}
+
+//====================================================================================================
+// Появление блоков при прокрутке (класс _revealed ставит refund.js)
+._reveal-ready [data-reveal]:not(._revealed) {
+	opacity: 0;
+}
+[data-reveal]._revealed {
+	animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) backwards;
+}
+[data-reveal="zoom"]._revealed {
+	animation-name: revealZoom;
+	animation-duration: 1.1s;
+}
+// Показ без анимации (переход по якорю)
+[data-reveal]._reveal-instant {
+	animation: none;
+	&::before,
+	&::after {
+		transition: none;
+	}
+}
+
+@keyframes revealUp {
+	from {
+		opacity: 0;
+		transform: translateY(rem(30));
+	}
+}
+
+@keyframes revealZoom {
+	from {
+		opacity: 0;
+		transform: scale(0.93);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.demo-link__icon {
+		animation: none;
 	}
 }
